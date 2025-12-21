@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv/
+.env.*
+.DS_Store
+.idea/
+.vscode/
+.mypy_cache/
+.pytest_cache/
+.cache/
+coverage/
+storage/vector_store/*
+!storage/vector_store/.gitkeep

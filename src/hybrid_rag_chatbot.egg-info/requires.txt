@@ -1,0 +1,14 @@
+langchain>=0.3.0
+langchain-community>=0.3.0
+langchain-openai>=0.2.0
+langchain-text-splitters>=0.3.0
+neo4j>=5.20.0
+python-dotenv>=1.0.1
+typer>=0.12.5
+rich>=13.7.1
+faiss-cpu>=1.8.0.post1
+tiktoken>=0.7.0
+pydantic>=2.7.0
+streamlit>=1.40.0
+beautifulsoup4>=4.12.0
+pypdf>=4.2.0
