@@ -78,8 +78,8 @@ Use `--debug` to print the vector chunks and graph reasoning returned for each a
 If you prefer a lightweight web UI, launch Streamlit from the project root:
 
 ```bash
-streamlit run streamlit_app.py
-# ou avec uv : uv run streamlit run streamlit_app.py
+streamlit run app/streamlit_app.py
+# ou avec uv : uv run streamlit run app/streamlit_app.py
 ```
 
 The sidebar lets you point to a custom `.env`, toggle retrieval context, and reload the pipeline without restarting the server.
