@@ -28,13 +28,19 @@ Minimal yet structured playground for a hybrid Retrieval-Augmented Generation (R
 
 ## Setup
 
-1. **Create a virtual environment** (recommended):
+1. **Install [uv](https://docs.astral.sh/uv/)** (once per machine):
 	```bash
-	python -m venv .venv && source .venv/bin/activate
+	curl -Ls https://astral.sh/uv/install.sh | sh
 	```
-2. **Install dependencies**:
+2. **Bootstrap the project environment** (creates `.venv` if missing and installs deps):
 	```bash
-	python -m pip install -e .
+	./scripts/install_uv.sh
+	```
+	Need to run things manually instead? Use:
+	```bash
+	uv venv
+	source .venv/bin/activate
+	uv pip install -e .
 	```
 3. **Configure environment variables**:
 	```bash
@@ -47,8 +53,8 @@ Minimal yet structured playground for a hybrid Retrieval-Augmented Generation (R
 ### Ingest documentation
 
 ```bash
-python -m hybrid_rag.cli ingest \
-  --data-dir data/docs        # optional override; defaults to config value
+uv run python -m hybrid_rag.cli ingest \
+	--data-dir data/docs        # optional override; defaults to config value
 ```
 
 The command will:
@@ -62,13 +68,13 @@ The command will:
 Interactive mode:
 
 ```bash
-python -m hybrid_rag.cli chat
+uv run python -m hybrid_rag.cli chat
 ```
 
 Single-shot question:
 
 ```bash
-python -m hybrid_rag.cli chat -q "How does the ingestion flow work?" --debug
+uv run python -m hybrid_rag.cli chat -q "How does the ingestion flow work?" --debug
 ```
 
 Use `--debug` to print the vector chunks and graph reasoning returned for each answer.
@@ -78,8 +84,7 @@ Use `--debug` to print the vector chunks and graph reasoning returned for each a
 If you prefer a lightweight web UI, launch Streamlit from the project root:
 
 ```bash
-streamlit run app/streamlit_app.py
-# ou avec uv : uv run streamlit run app/streamlit_app.py
+uv run streamlit run app/streamlit_app.py
 ```
 
 The sidebar lets you point to a custom `.env`, toggle retrieval context, and reload the pipeline without restarting the server.
